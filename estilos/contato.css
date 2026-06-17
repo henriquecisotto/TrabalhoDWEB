@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    color: #36b831;
+    font-size: 30px;
+    font-family: "VT323", monospace;
+}
+
+header {
+    grid-area: header;
+
+    display: grid;
+    grid-template-columns: 0.75fr 2fr 1.5fr;
+    align-items: center;
+
+    background-color: black;
+    border-bottom: 2px solid #36b831;
+}
+
+header>p {
+    font-size: 35px;
+}
+
+header figure img {
+    height: 100px;
+    margin-left: 30px;
+}
+
+header>form {
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    border: 2px solid #36b831;
+    border-radius: 30px;
+    padding: 6px 15px;
+    width: 400px;
+    height: 30px;
+}
+
+
+header>form input {
+    flex: 1;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 23px;
+}
+
+body {
+    background-color: black;
+    display: grid;
+
+    grid-template-columns: 250px 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+        "header header header"
+        "aside  main section"
+        "footer footer footer";
+
+    min-height: 100vh;
+}
+
+main {
+    grid-area: main;
+
+    padding: 20px;
+}
+
+aside {
+    grid-area: aside;
+
+    background-color: #111;
+    border-right: 2px solid #36b831;
+
+    padding: 0px;
+}
+
+aside nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside nav>ul>li {
+    position: relative;
+}
+
+aside nav a {
+    display: block;
+    padding: 10px 0 10px 15px;
+    text-decoration: none;
+}
+
+aside nav ul ul {
+    display: none;
+
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 220px;
+    background-color: #222;
+    border: 2px solid #36b831;
+    border-radius: 10px;
+}
+
+aside nav li:hover {
+    background-color: #2c2c2c;
+    border-radius: 5px;
+}
+
+aside nav li:hover>ul {
+    display: block;
+}
+
+
+main > form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 500px;
+    background-color: #151515;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+label {
+    font-size: 16px;
+}
+
+
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 97, 5%;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: #222;
+}
+
+textarea {
+    resize: none;
+}
+
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 5px;
+}
+
+main > form button {
+    padding: 10px;
+    border: 2px solid #36b831;
+    background-color: #111;
+    color: #36b831;
+
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+fieldset {
+    display: flex;
+    gap: 10px;
+    border: none;
+    padding: 0;
+}
+
+fieldset button {
+    flex: 1;
+}
+
+section {
+    grid-area: section;
+    padding: 20px;
+
+}
+
+#titulo,
+#dados {
+    white-space: pre-wrap;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 15px;
+    background-color: #111;
+    border-top: 2px solid #333;
+}
+@media (max-width: 767px) {
+
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        color: #36b831;
+        font-size: 24px;
+        font-family: "VT323", monospace;
+    }
+
+    body {
+        background-color: black;
+        display: grid;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+
+        grid-template-areas:
+            "header"
+            "aside"
+            "main"
+            "section"
+            "footer";
+
+        min-height: 100vh;
+    }
+
+    header {
+        grid-area: header;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 15px;
+        padding: 15px;
+
+        border-bottom: 2px solid #36b831;
+    }
+
+    header figure img {
+        height: 80px;
+        margin: 0;
+    }
+
+    header>p {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    header>form {
+        width: 100%;
+        max-width: 100%;
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+
+        background-color: #222;
+        border: 2px solid #36b831;
+        border-radius: 30px;
+
+        padding: 8px 15px;
+    }
+
+    header>form input {
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: 22px;
+    }
+
+    aside {
+        grid-area: aside;
+
+        background-color: #111;
+        border-bottom: 2px solid #36b831;
+    }
+
+    aside nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    aside nav a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    aside nav li:hover {
+        background-color: #2c2c2c;
+    }
+
+    aside nav ul ul {
+        display: none;
+    }
+
+    main {
+        grid-area: main;
+        padding: 15px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    section>a {
+        width: 100%;
+        text-decoration: none;
+    }
+
+    article {
+        width: 100%;
+        background-color: #222;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    article figure img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    figcaption {
+        background-color: #121212;
+        text-align: center;
+        padding: 10px;
+    }
+
+    article p {
+        padding: 15px;
+        text-align: center;
+    }
+
+    main>form {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+
+        background-color: #222;
+        border: none;
+        border-radius: 6px;
+    }
+
+    label {
+        font-size: 22px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        border: none;
+        padding: 0;
+    }
+
+    fieldset button {
+        width: 100%;
+        padding: 12px;
+
+        background-color: #111;
+        border: 2px solid #36b831;
+        border-radius: 6px;
+
+        cursor: pointer;
+    }
+
+    #titulo,
+    #dados {
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    footer {
+        grid-area: footer;
+
+        background-color: #111;
+        border-top: 2px solid #36b831;
+
+        padding: 15px;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 20px;
+    }
+}

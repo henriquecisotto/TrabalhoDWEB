@@ -2,11 +2,11 @@ function mostraDadosForms(event) {
     event.preventDefault();
     let termos = document.getElementById("cbTermos").checked;
     let email = document.getElementById("ipEmail").value;
-    let senha = document.getElementById("ipSenha").value;
+    let telefone = document.getElementById("ipTelefone").value;
     let mensagem = document.getElementById("taMensagem").value;
     let tipoMensagem = document.getElementById("slTipoMensagem").options[document.getElementById("slTipoMensagem").selectedIndex].text;
 
-    if (email && senha && mensagem && termos) {
+    if (email && telefone && mensagem && termos) {
 
         if (termos) {
             termos = "Sim";
@@ -15,7 +15,7 @@ function mostraDadosForms(event) {
         }
 
         let retorno = "Email: " + email +
-            "\nSenha: " + senha +
+            "\nTelefone: " + telefone +
             "\nMensagem: " + mensagem +
             "\nTipo da Mensagem: " + tipoMensagem +
             "\nAceitou os termos?: " + termos;
@@ -43,7 +43,7 @@ function mostraDadosForms(event) {
             verif[0] = true;
         }
 
-        if (!senha) {
+        if (!telefone) {
             verif[1] = true;
         }
 
@@ -64,7 +64,7 @@ function mostraDadosForms(event) {
         }
 
         let alerta = "Por favor,"
-        let possAlertas = [" um email", " uma senha", " uma mensagem", " aceite os termos de uso e política de privacidade"];
+        let possAlertas = [" um email", " um telefone", " uma mensagem", " aceite os termos de uso e política de privacidade"];
         let quantAlertas = 0;
 
         if(verif[0] || verif[1] || verif[2]){

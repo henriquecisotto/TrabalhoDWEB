@@ -130,7 +130,7 @@ label {
 
 
 input[type="email"],
-input[type="password"],
+input[type="tel"],
 textarea,
 select {
     width: 97, 5%;
@@ -347,7 +347,7 @@ footer {
     }
 
     input[type="text"],
-    input[type="password"],
+    input[type="tel"],
     textarea,
     select {
         width: 100%;
